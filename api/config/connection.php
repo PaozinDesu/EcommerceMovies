@@ -1,16 +1,17 @@
 <?php
-// Credenciais de conexão com o banco de dados
 $servername = "localhost";
 $username = "root";
 $password = "";
 $dbname = "bd_ecommerce_movies";
 
-// Criando conexão
+// Create connection
 $connect = new mysqli($servername, $username, $password, $dbname);
 $connect->set_charset("utf8");
 
-// Checando se conectou
+// Check connection
 if ($connect->connect_error) {
-    echo("Erro ao conectar com o banco de dados");
-    return;
+    echo ('{
+        "status" : 400,
+        "response" : "Não foi possível se conectar com o banco de dados"
+    }');
 }
