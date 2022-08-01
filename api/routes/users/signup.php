@@ -24,6 +24,7 @@
 
                     // Tratando a data
                     $today =  getdate();
+
                     $day = $today["mday"];
                     $month = $today["mon"];
                     $year = $today["year"];
@@ -37,7 +38,7 @@
                     $today = $year . "-" . $month . "-" . $day;
 
                     $sql = "INSERT INTO user(`user_name`, user_email, user_password, user_date) VALUES ('$name', '$email', '$encrypted_password', '$today')";
-                     if ($connect->query($sql) === TRUE) {
+                    if ($connect->query($sql) === TRUE) {
                         $response["status"] = 200;
                         $response["response"] = "Cadastro realizado com sucesso";
                     } else {
